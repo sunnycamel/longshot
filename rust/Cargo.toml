@@ -1,0 +1,22 @@
+[package]
+name = "longshot"
+version = "0.1.0"
+edition = "2021"
+description = "A Rust macOS scrolling screenshot menu-bar app"
+license = "MIT"
+
+[dependencies]
+objc2 = "0.6"
+objc2-foundation = "0.3"
+objc2-app-kit = "0.3"
+core-graphics = "0.25"
+core-foundation = "0.10"
+image = { version = "0.25", default-features = false, features = ["png"] }
+arboard = "3"
+chrono = "0.4"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+panic = "abort"

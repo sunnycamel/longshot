@@ -1,0 +1,10 @@
+.DS_Store
+/target
+/rust/target
+/.cargo
+/.tmp
+/rust/.cache
+/.build
+/tests/stitcher_test
+/tests/capture_e2e
+/tests/e2e.png
