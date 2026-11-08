@@ -15,6 +15,20 @@ image = { version = "0.25", default-features = false, features = ["png"] }
 arboard = "3"
 chrono = "0.4"
 
+[[bin]]
+name = "longshot"
+path = "src/main.rs"
+
+# 图标生成工具（设计迭代用），不参与常规构建，需显式启用 feature：
+#   cargo run --release --features icon-tool --bin make-icon
+[[bin]]
+name = "make-icon"
+path = "tools/make_icon.rs"
+required-features = ["icon-tool"]
+
+[features]
+icon-tool = []
+
 [profile.release]
 opt-level = 3
 lto = "thin"

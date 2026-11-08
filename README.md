@@ -56,6 +56,13 @@ open Longshot.app
 
 构建产物：`Longshot.app`（arm64，当前机器架构）。
 
+重新生成应用图标（可选，纯 Rust 实现，不依赖 Swift；同时直接打包 `.icns`，无需 iconutil）：
+
+```bash
+cargo run --release --manifest-path rust/Cargo.toml \
+  --features icon-tool --bin make-icon -- assets/AppIcon.png --icns assets/AppIcon.icns
+```
+
 ## Rust 代码结构
 
 ```text
